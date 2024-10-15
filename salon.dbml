@@ -1,0 +1,17 @@
+Table customers {
+  customer_id SERIAL [PRIMARY KEY]
+  phone VARCHAR [UNIQUE]
+  name VARCHAR
+}
+
+Table appointments {
+  appointment_id SERIAL [PRIMARY KEY]
+  customer_id INT [ref: < customers.customer_id]
+  service_id INT [ref: < services.service_id]
+  time VARCHAR
+}
+
+Table services {
+  service_id SERIAL [PRIMARY KEY]
+  name VARCHAR
+}
